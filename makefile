@@ -1,5 +1,5 @@
 arch=32
-#nacl=tweetnacl.c
+nacl=read_README.md
 
 qsalt.so: qsalt.so.$(shell uname -s | tr A-Z a-z)
 
