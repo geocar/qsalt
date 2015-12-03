@@ -1,5 +1,15 @@
 [NaCL](http://nacl.cr.yp.to/) bindings for q/kdb.
 
+* Public Key
+ * [Authenticated Encryption](#public-key-authenticated-encryption)
+ * [Signatures](#public-key-signatures)
+* Secret Key
+ * [Authenticated Encryption](#secret-key-authenticated-encryption)
+* Utilities
+ * [Hashing](#hashing)
+ * [Comparing Strings](#comparing-strings)
+* [Building](#building)
+
 You *should* be able to:
 
     .qsalt:@[`qsalt 2:(`qsalt;1);0]
