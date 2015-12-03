@@ -82,12 +82,9 @@ Calculates the SHA512 hash of a string/bytearray:
     .qsalt.cmp16["this is sixteen!";"somethinginvalid"]
 
 # Building
-The makefile assumes kdb/q is installed in `$HOME/q` and that you have
-the [C bindings](http://kx.com/q/d/c.htm) installed in `$HOME/q/c`:
+The makefile assumes kdb/q is installed in `$HOME/q` and that you have [k.h](http://kx.com/q/c/c/k.h) installed in `$HOME/q/c`:
 
     q/c/k.h
-    q/c/l64/c.o
-    q/c/m64/c.o
 
 qsalt requires NaCL. On Debian systems you can install:
 
