@@ -1,4 +1,4 @@
-\l qsalt.q
+.qsalt:@[`qsalt 2:(`qsalt;1);0]
 A:{$[x;`ok;'`oops]}
 
 alice:.qsalt.pkey`

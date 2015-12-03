@@ -14,11 +14,9 @@
 
 ##Loading
 
-You *should* be able to:
+You can load qsalt with:
 
     .qsalt:@[`qsalt 2:(`qsalt;1);0]
-
-however on OSX this doesn't work, so you can use [qsalt.q](qsalt.q) as a workaround.
 
 ##Public Key Authenticated Encryption
 
