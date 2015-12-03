@@ -3,11 +3,11 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-typedef unsigned long long j;ZJ zero=0;
+typedef unsigned long long j;
 void randombytes(unsigned char *b,j n){I f,r;while(n>0){r=read(f=open("/dev/urandom",O_RDONLY),b,n);close(f);if(r>0)b+=r,n-=r;}}
 
-ZK gz(I n){K x=ktn(KG,n);if(n)memset(xG,0,n);R x;}ZK gg(S s,I n){K x=ktn(KG,n);memcpy(xG,s,n);R x;}ZK gp(K x,I n){K z=gz(n);jv(&z,x);R z;}ZK up(K x){memmove(xG,xG+32,xn-32);xn-=32;while(xn&&!xG[xn-1])xn--;R x;}ZI kn(K x){R xt>=0?xn:-1;}
-#define L(x,n)while(kn(x)<n)ja(&x,&zero);
+ZK gz(I n){K x=ktn(KG,n);if(n)memset(xG,0,n);R x;}ZK gg(S s,I n){K x=ktn(KG,n);memcpy(xG,s,n);R x;}ZK gp(K x,I n){K z=gz(n);jv(&z,x);R z;}ZK up(K x){memmove(xG,xG+32,xn-32);xn-=32;R x;}ZI kn(K x){R xt>=0?xn:-1;}
+#define L(x,n)P(kn(x)!=n,krr("length"))
 
 ZK nonce(K _){G n[32];randombytes(n,32);R gg(n,32);}//->nonce
 

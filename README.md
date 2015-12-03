@@ -50,7 +50,7 @@ Bob then verifies the signature:
 
     "c"$.qsalt.verify[message;alice 0]
 
-If the signature is invalid, then null will be returned.
+If the signature is invalid, then null will be returned. Note the result is padded with null-bytes.
 
 ##Secret Key Authenticated Encryption
 
@@ -66,7 +66,7 @@ Decrypting the message also verifies it:
 
     "c"$.qsalt.sdecrypt[message;secret]
 
-If the message was altered, then null will be returned.
+If the message was altered, then null will be returned. Note the result is padded with null-bytes.
 
 ##Hashing
 
