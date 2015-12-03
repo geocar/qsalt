@@ -83,6 +83,9 @@ Calculates the SHA512 hash of a string/bytearray:
     .qsalt.cmp16["this is sixteen!";"this is sixteen!"]
     .qsalt.cmp16["this is sixteen!";"somethinginvalid"]
 
+## Encrypting KDB Communication
+
+
 # Building
 The makefile assumes kdb/q is installed in `$HOME/q` and that you have
 the [C bindings](http://kx.com/q/d/c.htm) installed in `$HOME/q/c`:
@@ -121,5 +124,6 @@ As a convenience, [tweetnacl](tweetnacl.c) is included, and can be used with:
 
     make nacl=tweetnacl.c arch=32
     make nacl=tweetnacl.c arch=64
+
 
 
