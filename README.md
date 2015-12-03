@@ -1,5 +1,6 @@
 [NaCL](http://nacl.cr.yp.to/) bindings for q/kdb.
 
+
 # Building
 The makefile assumes kdb/q is installed in `$HOME/q` and that you have
 the [C bindings](http://kx.com/q/d/c.htm) installed in `$HOME/q/c`:
@@ -12,11 +13,19 @@ qsalt requires NaCL. On Debian systems you can install:
 
     sudo apt-get install libsodium-dev
 
+then build with:
+
+    make nacl=-lsodium arch=64
+
 Note if you're building for the 32-bit version of KDB you will need:
 
     sudo apt-get install libsodium-dev:i386
 
-On other systems you install it from [The NaCL homepage](http://nacl.cr.yp.to/install.html); You can unpack it directly into this tree:
+then build with:
+
+    make nacl=-lsodium arch=32
+
+on other systems you install it from [The NaCL homepage](http://nacl.cr.yp.to/install.html); You can unpack it directly into this tree:
 
     wget http://hyperelliptic.org/nacl/nacl-20110221.tar.bz2
     bunzip2 < nacl-20110221.tar.bz2 | tar -xf -
@@ -28,9 +37,7 @@ Then to build:
 
 As a convenience, [tweetnacl](tweetnacl.c) is included, and can be used with:
 
-    make nacl=tweetnacl.c
-
-
-
+    make nacl=tweetnacl.c arch=32
+    make nacl=tweetnacl.c arch=64
 
 
