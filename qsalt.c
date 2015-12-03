@@ -25,7 +25,7 @@ ZK verify(K x,K y){K r=ktn(KG,xn-64);j n=r->n;if(-1==crypto_sign_edwards25519sha
 ZK sencrypt(K x,K y){K m=gp(xy,32),r=ktn(KG,m->n);crypto_secretbox_xsalsa20poly1305_ref(kG(r),kG(m),m->n,kG(xx),kG(y));jv(&r,xx);R r;}//(nonce;text);secret->message
 ZK sdecrypt(K x,K y){K r=ktn(KG,xn);if(-1==crypto_secretbox_xsalsa20poly1305_ref_open(kG(r),xG,xn-32,xG+(xn-32),kG(y)))r0(r),r=ss("");else r=up(r);R r;}//message;secret->text
 
-//no point is unsing the unauthenticated encryption
+//no point is using the unauthenticated encryption
 
 ZK hash(K x){K r=ktn(KG,64);crypto_hash_sha512_ref(kG(r),xG,xn);R r;}
 ZK cmp16(K x,K y){R kb(!crypto_verify_16_ref(xG,kG(y)));}
