@@ -1,5 +1,10 @@
 [NaCL](http://nacl.cr.yp.to/) bindings for q/kdb.
 
+You *should* be able to:
+
+    .qsalt:@[`qsalt 2:(`qsalt;1);0]
+
+however on OSX this doesn't work, so you can use [qsalt.q](qsalt.q) as a workaround.
 
 # Building
 The makefile assumes kdb/q is installed in `$HOME/q` and that you have

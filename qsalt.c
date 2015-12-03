@@ -1,5 +1,5 @@
 /*
-.qsalt:@[`qsalt 2:(`qsalt;1);`]
+.qsalt:@[`qsalt 2:(`qsalt;1);0]
 */
 #include "k.h"
 
