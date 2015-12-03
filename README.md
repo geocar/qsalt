@@ -1,5 +1,7 @@
 [NaCL](http://nacl.cr.yp.to/) bindings for q/kdb.
 
+##### Table of Contents  
+* [Loading](#loading)
 * Public Key
  * [Authenticated Encryption](#public-key-authenticated-encryption)
  * [Signatures](#public-key-signatures)
@@ -9,6 +11,8 @@
  * [Hashing](#hashing)
  * [Comparing Strings](#comparing-strings)
 * [Building](#building)
+
+##Loading
 
 You *should* be able to:
 
