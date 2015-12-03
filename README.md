@@ -6,6 +6,69 @@ You *should* be able to:
 
 however on OSX this doesn't work, so you can use [qsalt.q](qsalt.q) as a workaround.
 
+##Public Key Authenticated Encryption
+
+Generate (public;private) keypair:
+
+    alice:.qsalt.pkey`
+    bob:.qsalt.pkey`
+
+Alice creates a ciphertext message for Bob:
+
+    message:.qsalt.pencrypt[(.qsalt.nonce`;"this is secret");bob 0;alice 1]
+
+Bob decodes the ciphertext message:
+
+    "c"$.qsalt.pdecrypt[message;alice 0;bob 1]
+
+If the ciphertext has been corrupted or was not created by Alice, then null will be returned.
+
+##Public Key Signatures
+
+Generate (public;private) keypair:
+
+    alice:.qsalt.newkey`
+    bob:.qsalt.newkey`
+
+Alice signs a message for Bob. Note that the message is not encrypted.
+
+    message:.qsalt.sign["this is verified";alice 1]
+
+Bob then verifies the signature:
+
+    "c"$.qsalt.verify[message;alice 0]
+
+If the signature is invalid, then null will be returned.
+
+##Secret Key Authenticated Encryption
+
+There are several ways to generate a secret key; it can be any 32 random bytes:
+
+    secret:.qsalt.random32`
+
+Encrypting a message requires a nonce; this nonce must not be reused:
+
+    message:.qsalt.sencrypt[(.qsalt.nonce`;"this is also secret");secret]
+
+Decrypting the message also verifies it:
+
+    "c"$.qsalt.sdecrypt[message;secret]
+
+If the message was altered, then null will be returned.
+
+##Hashing
+
+Calculates the SHA512 hash of a string/bytearray:
+
+    .qsalt.hash "whatever"
+
+##Comparing Strings
+
+`.qsalt.cmp16` and `.qsalt.cmp32` are constant-time comparison functions and should be used for comparing byte-strings.
+
+    .qsalt.cmp16["this is sixteen!";"this is sixteen!"]
+    .qsalt.cmp16["this is sixteen!";"somethinginvalid"]
+
 # Building
 The makefile assumes kdb/q is installed in `$HOME/q` and that you have
 the [C bindings](http://kx.com/q/d/c.htm) installed in `$HOME/q/c`:
