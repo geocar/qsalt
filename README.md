@@ -31,7 +31,7 @@ Alice creates a ciphertext message for Bob:
 
 Bob decodes the ciphertext message:
 
-    "c"$.qsalt.pdecrypt[message;alice 0;bob 1]
+    .qsalt.pdecrypt[message;alice 0;bob 1]
 
 If the ciphertext has been corrupted or was not created by Alice, then null will be returned.
 
@@ -48,9 +48,9 @@ Alice signs a message for Bob. Note that the message is not encrypted.
 
 Bob then verifies the signature:
 
-    "c"$.qsalt.verify[message;alice 0]
+    .qsalt.verify[message;alice 0]
 
-If the signature is invalid, then null will be returned. Note the result is padded with null-bytes.
+If the signature is invalid, then null will be returned.
 
 ##Secret Key Authenticated Encryption
 
@@ -64,9 +64,9 @@ Encrypting a message requires a nonce; this nonce must not be reused:
 
 Decrypting the message also verifies it:
 
-    "c"$.qsalt.sdecrypt[message;secret]
+    .qsalt.sdecrypt[message;secret]
 
-If the message was altered, then null will be returned. Note the result is padded with null-bytes.
+If the message was altered, then null will be returned.
 
 ##Hashing
 
