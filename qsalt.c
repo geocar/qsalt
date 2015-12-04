@@ -7,7 +7,7 @@
 typedef unsigned long long j;
 void randombytes(unsigned char *b,j n){I f,r;while(n>0){r=read(f=open("/dev/urandom",O_RDONLY),b,n);close(f);if(r>0)b+=r,n-=r;}}
 ZI bs(I x){R ((x&255)<<24)|((x&65280)<<8)|((x&16711680)>>8)|(((x&4278190080)>>24)&255);}ZI kn(K x){R xt>=0?xn:-1;}
-ZK gz(I n){K x=ktn(KG,n);memset(xG,0,n);R x;}ZK gg(S s,I n){K x=ktn(KG,n);memcpy(xG,s,n);R x;}ZK gp(K x,I m){K z=gz(m);jv(&z,b9(3,x));R z;}
+ZK gz(I n){K x=ktn(KG,n);memset(xG,0,n);R x;}ZK gg(S s,I n){K x=ktn(KG,n);memcpy(xG,s,n);R x;}ZK gp(K x,I m){K z=gz(m);jv(&z,b9(2,x));R z;}
 ZK gu(K x,I m){I n;if(m){if(m>=8+xn)R r0(x),(K)0;memmove(xG,xG+m,xn-m);xn-=m;}if(xI[0]==1&&xn>=xI[1])xn=xI[1];else if(xI[0]==16777216&&xn>=(n=bs(xI[1])))xn=n;else R r0(x),(K)0;R d9(x);}
 #define L(x,n)P(kn(x)!=n,krr("length"))
 
