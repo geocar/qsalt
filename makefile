@@ -1,6 +1,6 @@
 arch=32
 nacl=read_README.md
-pv=$(shell echo "$(nacl)" | openssl sha256 | sed -e 's/^.*= *//' | cut -c1-5)
+pv=$(shell echo "$(nacl)" | openssl sha1 | sed -e 's/^.*= *//' | cut -c1-5)
 
 qsalt.so: qsalt.so.$(shell uname -s | tr A-Z a-z).$(pv)
 
